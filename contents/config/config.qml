@@ -9,16 +9,4 @@ ConfigModel {
         icon: "configure"
         source: "configGeneral.qml"
     }
-
-    ConfigCategory {
-        name: i18n("Changelog & Tutorials")
-        icon: "note"
-        source: "notification.qml"
-    }
-
-    ConfigCategory {
-        name: i18n("Upload Lyrics")
-        icon: "note"
-        source: "lyricUpload.qml"
-    }
 }

@@ -9,23 +9,25 @@ Kirigami.FormLayout {
     id: generalPage
     signal configurationChanged
 
-    property alias cfg_yesPlayMusicChecked: yesPlayMusicPropriataryRadioButton.checked 
-    property alias cfg_spotifyChecked: spotifyPropriataryRadioButton.checked   
+    property alias cfg_yesPlayMusicChecked: yesPlayMusicPropriataryRadioButton.checked
+    property alias cfg_spotifyChecked: spotifyPropriataryRadioButton.checked
     property alias cfg_compatibleModeChecked: compatibleModeRadioButton.checked
-    property alias cfg_lyricTextSize: lyricTextSizeSpinBox.value 
+    property alias cfg_lyricTextSize: lyricTextSizeSpinBox.value
     property alias cfg_lyricTextColor: lyricTextColorButton.color
-    property alias cfg_lyricTextBold: boldButton.checked   
-    property alias cfg_lyricTextItalic: italicButton.checked 
+    property alias cfg_lyricTextBold: boldButton.checked
+    property alias cfg_lyricTextItalic: italicButton.checked
     property alias cfg_lyricTextVerticalOffset: lyricTextVerticalOffsetSpinBox.value
     property alias cfg_mediaControllSpacing: mediaControllSpacingSpinBox.value
     property alias cfg_mediaControllItemSize: mediaControllItemSizeSpinBox.value
     property alias cfg_mediaControllItemVerticalOffset: mediaControllItemVerticalOffsetSpinBox.value
     property alias cfg_whiteMediaControlIconsChecked: whiteMediaControlIconsChecked.checked
     property alias cfg_preferedWidgetWidth: preferedWidgetWidthTextField.text
+    property alias cfg_preferedTextLength: preferedTextLengthTextField.text
+    property alias cfg_preferedFont: preferedFontTextField.text
 
     QQC2.RadioButton {
         id: yesPlayMusicPropriataryRadioButton
-        Kirigami.FormData.label: i18n("Modes: ")
+        Kirigami.FormData.label: icon("Modes: ")
         text: i18n("YesPlayMusic(YPM)")
     }
 
@@ -63,7 +65,7 @@ Kirigami.FormLayout {
         id: mediaControllItemVerticalOffsetSpinBox
         Kirigami.FormData.label: i18n("Media control items vertical offset: ")
     }
-    
+
     QQLayouts.RowLayout {
         Kirigami.FormData.label: i18n("Lyric text color: ")
 
@@ -101,10 +103,13 @@ Kirigami.FormLayout {
         Kirigami.FormData.label: i18n("Prefered Widget Width: ")
     }
 
-    // trackName	true	string	Title of the track
-    // artistName	true	string	Track's artist name
-    // albumName	true	string	Track's album name
-    // duration	true	number	Track's duration
-    // plainLyrics	true	string	Plain lyrics for the track
-    // syncedLyrics	true	string	Synchronized lyrics for the track
-}   
+    QQC2.TextField {
+        id: preferedTextLengthTextField
+        Kirigami.FormData.label: i18n("Prefered text length: ")
+    }
+
+    QQC2.TextField {
+        id: preferedFontTextField
+        Kirigami.FormData.label: i18n("Font family: ")
+    }
+}
